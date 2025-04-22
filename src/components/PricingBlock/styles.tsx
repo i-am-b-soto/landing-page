@@ -12,7 +12,6 @@ export const ContentSection = styled("section")`
 
 export const TextBox = styled("div")`
     display: relative;
-    height: 300px;
 `;
 
 export const Content = styled("p")`
@@ -20,13 +19,13 @@ export const Content = styled("p")`
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-  margin: 1.5rem 0 2rem 0;
+    margin: 1.5rem 0 2rem 0;
 `;
 
 export const StyledRow = styled(Row)<{ $direction?: "left" | "right" }>`
   flex-direction: ${({ $direction }) =>
     $direction === "left" ? "row" : "row-reverse"};
+
 `;
 
 export const ContentWrapper = styled("div")`
@@ -40,18 +39,27 @@ export const ContentWrapper = styled("div")`
 
 
 export const PriceWrapper= styled("div")`
-  padding: 4rem 4rem 10rem 4rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+
+}
+`;
+
+export const PriceWrapperContainer  = styled("div")`
+
+  height: 400px;
+
+  padding: 4rem 4rem 4rem 4rem;
   border: 1px solid #7D3C98; 
   border-radius: 15px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 
-  margin: 20px auto;
-  height: 480px;
-  width: 390px;
-
-
-
-  @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1024px) {
     padding: 4rem 2rem 6rem 2rem;
   }
 
@@ -60,20 +68,6 @@ export const PriceWrapper= styled("div")`
   &:focus {
     transform: scale(1.05);
     transition-duration: 0.5s;
-
-
-}
-`;
-
-export const PriceWrapperContainer  = styled("div")`
-  width: 100%;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-
-
 
 
 `;
@@ -127,6 +121,7 @@ export const Title = styled("div")`
     flex-direction: row;
 
     h6 {
+        margin-top: 0;
         margin-bottom: 0;
         font-size: 45px;
     }

@@ -1,0 +1,32 @@
+{
+  "title": "Services Offered",
+  "text": "Brian Soto Consulting specializes in Big Data Migration. Automated ETL pipelines. Datawarehouse management and creation. And high tech administrative Web Apps and custom report tools.",
+  "button": [
+    {
+      "title": "See Our Prices!",
+      "scrollTo": "prices"
+    }
+  ],  
+  "section": [
+    {
+      "title": "Big Data migration and ETL",
+      "content": "Need data automated somewhere? Or a refactored database schema? A new Data warehouse?",
+      "icon": "process-outline.svg"
+    },
+    {
+      "title": "Data Analytics Reports",
+      "content": "Need reports on your Big Data?",
+      "icon": "graphs.svg"
+    },
+    {
+      "title": "Web Applications",
+      "content": "Develop high-tech web applications for your unique company needs",
+      "icon": "eCommerce-solid.svg"
+    },
+    {
+      "title": "And more!",
+      "content": "Have a question about something not listed here? Let's chat!",
+      "icon": "search-outline.svg"
+    }
+  ]
+}

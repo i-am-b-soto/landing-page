@@ -1,19 +1,11 @@
 import { lazy } from "react";
 import IntroContent from "../../content/IntroContent.json";
-import MiddleBlockContent from "../../content/MiddleBlockContent.json";
-import AboutContent from "../../content/AboutContent.json";
+import AboutContnet from "../../content/About.json";
+import ServicesContent from "../../content/ServicesContent.json";
 import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
 
-/*
-import Contact from "../../components/ContactForm";
-import MiddleBlock from "../../components/MiddleBlock";
-import Container from "../../common/Container";
-import ScrollToTop from "../../common/ScrollToTop";
-import ContentBlock from "../../components/ContentBlock";
-import PricingBlock from "../../components/PricingBlock";
-*/
 
 const Contact = lazy(() => import("../../components/ContactForm"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
@@ -35,10 +27,20 @@ const Home = () => {
         id="intro"
       />
       <MiddleBlock
-        title={MiddleBlockContent.title}
-        content={MiddleBlockContent.text}
-        button={MiddleBlockContent.button}
+        title={AboutContnet.title}
+        content={AboutContnet.text}
+        button={AboutContnet.button}
+        id="about"
       />
+      <ContentBlock
+        direction="left"
+        title={ServicesContent.title}
+        content={ServicesContent.text}
+        section={ServicesContent.section}
+        button={ServicesContent.button}
+        icon="support-solid-I.svg"
+        id="services"
+      />      
       <PricingBlock title=""></PricingBlock>
 
       <ContentBlock
@@ -46,7 +48,7 @@ const Home = () => {
         title={MissionContent.title}
         content={MissionContent.text}
         icon="product-launch.svg"
-        id="mission"
+        id="why"
       />
       <Contact
         title={ContactContent.title}

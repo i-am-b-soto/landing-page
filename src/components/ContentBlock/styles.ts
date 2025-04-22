@@ -14,6 +14,13 @@ export const Content = styled("p")`
   margin: 1.5rem 0 2rem 0;
 `;
 
+export const CenterButton = styled("div")`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
 export const StyledRow = styled(Row)<{ $direction?: "left" | "right" }>`
   flex-direction: ${({ $direction }) =>
     $direction === "left" ? "row" : "row-reverse"};
@@ -49,8 +56,8 @@ export const MinPara = styled("p")`
 
 export const ButtonWrapper = styled("div")`
   display: flex;
-  justify-content: space-between;
-  max-width: 100%;
+  justify-content: center;
+  width: 100%;
 
   @media screen and (min-width: 1024px) {
     max-width: 80%;

@@ -30,54 +30,56 @@ const PricingBlock = ({
         setVisibility(false);
       };
     return (
-      <ContentSection>
+      <ContentSection   id={"prices"}>
         <Fade direction={"right"} triggerOnce>
           <StyledRow
             justify="space-between"
             align="middle"
-            id={"pricing"}
             $direction={"left"}
           >
-            <Col xl={7}  xs={24}>
-                <PriceWrapperContainer>
+            <Col lg={7}  md={7} xs={8}>
+                <PriceWrapperContainer onClick={() => scrollTo("contact")}>
                     <PriceWrapper
                     onClick={() => scrollTo("contact")}
                     >
                         <TextBox>
-                            <Title><h6>{"$Free"} </h6></Title> <Title> <p><b>{"Project Estimate"}</b> </p></Title>
-                            <Content>{"For projects we're familiar with, we can give you a FREE estimate!     "}</Content>
-                        </TextBox>
+                            <Title><h6>{"$Free"} </h6> <p><b>{"Project Estimate"}</b> </p></Title>
+                            <Content>{"For projects we're familiar with, we can give you a FREE estimate!"}</Content>
                         <ButtonWrapper>
                             <Button onClick={() => scrollTo("contact")}>{"Book Now!"} </Button>
                         </ButtonWrapper>
+                        </TextBox>
                     </PriceWrapper>
                 </PriceWrapperContainer>              
             </Col>
-            <Col xl={7} xs={24}>
-                <PriceWrapperContainer>
+            <Col lg={7} md={7} xs={8}>
+                <PriceWrapperContainer onClick={() => scrollTo("contact")}>
                     <PriceWrapper
                     onClick={() => scrollTo("contact")}
                     >
                         <TextBox>
-                            <Title><h6>{"$85/Hr"}</h6> </Title>  <Title>  <p><b>{"Ad Hoc Hours"}</b></p> </Title>
+                            <Title><h6>{"$85/Hr"}</h6>  <p><b>{"Ad Hoc Hours"}</b></p> </Title>
                             <Content>{"Not sure how many hours you need on your project? You can start here!"}</Content>
-                        </TextBox>
+                       
                         <ButtonWrapper>
                             <Button onClick={() => scrollTo("contact")}>{"Book Now!"} </Button>
                         </ButtonWrapper>
+                        </TextBox>
                     </PriceWrapper>
+
                 </PriceWrapperContainer>
             </Col>
-            <Col xl={7}  xs={24}>
-                <PriceWrapperContainer>
-                    <PriceWrapper>
-                        <TextBox onClick={() => scrollTo("contact")}>
-                            <Title><h6>{"$68/Hr"}</h6></Title>  <Title> <p><b>{"For Large Projects"}</b> </p></Title>
+            <Col lg={7} md={7} xs={8}>
+                <PriceWrapperContainer onClick={() => scrollTo("contact")}>
+                    <PriceWrapper >
+                        <TextBox >
+                            <Title><h6>{"$68/Hr"}</h6> <p><b>{"For Large Projects"}</b> </p></Title>
                             <Content>{"For projects known to take at least 100 hours, we offer a discounteed price!"}</Content>
-                        </TextBox>
+                        
                         <ButtonWrapper>
                             <Button onClick={() => scrollTo("contact")}>{"Book Now!"} </Button>
                         </ButtonWrapper>
+                        </TextBox>
                     </PriceWrapper> 
                 </PriceWrapperContainer>             
             </Col>

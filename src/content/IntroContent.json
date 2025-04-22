@@ -3,7 +3,8 @@
   "text": "Brian Soto Consulting specializes in Data Engineering solutions and Web App Development. We offer flexible pricing options for startups and small businesses. Let's chat!",
   "button": [
     {
-      "title": "Services"
+      "title": "Services",
+      "scrollTo": "services"
     },
     {
       "title": "Learn more",

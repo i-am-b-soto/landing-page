@@ -14,6 +14,7 @@ import {
   MinPara,
   StyledRow,
   ButtonWrapper,
+  CenterButton
 } from "./styles";
 
 const ContentBlock = ({
@@ -44,6 +45,33 @@ const ContentBlock = ({
         >
           <Col lg={11} md={11} sm={12} xs={24}>
             <SvgIcon src={icon} width="100%" height="100%" />
+            {direction === "left" ? (
+              <CenterButton>
+                <ButtonWrapper>
+                      {typeof button === "object" &&
+                        button.map(
+                          (
+                            item: {
+                              color?: string;
+                              title: string;
+                              scrollTo?: string;
+                            },
+                            id: number
+                          ) => {
+                            return (
+                              <Button
+                                key={id}
+                                color={item.color}
+                                onClick={() => scrollTo(item.scrollTo ? item.scrollTo : "about")}
+                              >
+                                {t(item.title)}
+                              </Button>
+                            );
+                          }
+                        )}
+                    </ButtonWrapper>
+                  </CenterButton>
+              ) : <></>}
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
@@ -57,6 +85,7 @@ const ContentBlock = ({
                         item: {
                           color?: string;
                           title: string;
+                          scrollTo?: string;
                         },
                         id: number
                       ) => {
@@ -64,7 +93,7 @@ const ContentBlock = ({
                           <Button
                             key={id}
                             color={item.color}
-                            onClick={() => scrollTo("about")}
+                            onClick={() => scrollTo(item.scrollTo ? item.scrollTo : "about")}
                           >
                             {t(item.title)}
                           </Button>
@@ -99,8 +128,10 @@ const ContentBlock = ({
                         }
                       )}
                   </Row>
+
                 </ServiceWrapper>
               )}
+
             </ContentWrapper>
           </Col>
         </StyledRow>

@@ -1,9 +1,9 @@
-import { withTranslation } from "react-i18next";
+import { cache } from "react";
 import { Container, StyledInput } from "./styles";
 import { Label } from "../TextArea/styles";
 import { InputProps } from "../types";
 
-const Input = ({ name, placeholder, onChange, t }: InputProps) => (
+const Input = ({ name, placeholder, onChange, t = (x:any)=>x}: InputProps) => (
   <Container>
     <Label htmlFor={name}>{t(name)}</Label>
     <StyledInput
@@ -15,4 +15,4 @@ const Input = ({ name, placeholder, onChange, t }: InputProps) => (
   </Container>
 );
 
-export default withTranslation()(Input);
+export default cache(Input);

@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, cache } from "react";
 import { Col } from "antd";
 import { Fade } from "react-awesome-reveal";
-import { withTranslation } from "react-i18next";
 
 import { PricingBlockProps } from "./types";
 import { Button } from "../../common/Button";
@@ -37,7 +36,7 @@ const PricingBlock = ({
             justify="space-between"
             align="middle"
             id={"pricing"}
-            direction={"left"}
+            $direction={"left"}
           >
             <Col xl={7}  xs={24}>
                 <PriceWrapperContainer>
@@ -89,5 +88,5 @@ const PricingBlock = ({
     );
   };
   
-  export default withTranslation()(PricingBlock);
+  export default cache(PricingBlock);
   

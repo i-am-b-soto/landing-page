@@ -1,5 +1,5 @@
+import { cache } from "react";
 import { Row, Col } from "antd";
-import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { ContactProps, ValidationTypeProps } from "./types";
 import { useForm } from "../../common/utils/useForm";
@@ -10,7 +10,7 @@ import Input from "../../common/Input";
 import TextArea from "../../common/TextArea";
 import { ContactContainer, FormGroup, Span, ButtonContainer } from "./styles";
 
-const Contact = ({ title, content, id, t }: ContactProps) => {
+const Contact = ({ title, content, id, t = (x)=>x }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit } = useForm(validate);
 
   const ValidationType = ({ type }: ValidationTypeProps) => {
@@ -69,4 +69,4 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
   );
 };
 
-export default withTranslation()(Contact);
+export default cache(Contact);

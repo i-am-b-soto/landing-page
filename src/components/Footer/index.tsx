@@ -1,9 +1,9 @@
+import { cache } from "react";
 import { Row, Col } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
 import { SvgIcon } from "../../common/SvgIcon";
 import Container from "../../common/Container";
 
-import i18n from "i18next";
+//import i18n from "i18next";
 import {
   FooterSection,
   Title,
@@ -26,9 +26,9 @@ interface SocialLinkProps {
   src: string;
 }
 
-const Footer = ({ t }: { t: TFunction }) => {
+const Footer = ({ t = (x)=>x }: { t?: (x:any) => any }) => {
   const handleChange = (language: string) => {
-    i18n.changeLanguage(language);
+    //i18n.changeLanguage(language);
   };
 
   const SocialLink = ({ href, src }: SocialLinkProps) => {
@@ -131,4 +131,4 @@ const Footer = ({ t }: { t: TFunction }) => {
   );
 };
 
-export default withTranslation()(Footer);
+export default cache(Footer);

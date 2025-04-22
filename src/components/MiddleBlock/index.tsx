@@ -1,5 +1,5 @@
+import { cache } from "react"
 import { Row, Col } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { Button } from "../../common/Button";
 import { MiddleBlockSection, Content, ContentWrapper } from "./styles";
@@ -8,10 +8,10 @@ interface MiddleBlockProps {
   title: string;
   content: string;
   button: string;
-  t: TFunction;
+  t?: (x:any) => any;
 }
 
-const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
+const MiddleBlock = ({ title, content, button, t =(x) => x }: MiddleBlockProps) => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
@@ -39,4 +39,4 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
   );
 };
 
-export default withTranslation()(MiddleBlock);
+export default cache(MiddleBlock);

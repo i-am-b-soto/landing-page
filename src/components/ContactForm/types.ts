@@ -1,9 +1,8 @@
-import { TFunction } from "react-i18next";
 export interface ContactProps {
   title: string;
   content: string;
   id: string;
-  t: TFunction;
+  t?: (x:any)=>any;
 }
 
 export interface ValidationTypeProps {

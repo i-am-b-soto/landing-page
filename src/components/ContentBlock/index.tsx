@@ -1,6 +1,6 @@
+import { cache } from "react";
 import { Row, Col } from "antd";
 import { Fade } from "react-awesome-reveal";
-import { withTranslation } from "react-i18next";
 
 import { ContentBlockProps } from "./types";
 import { Button } from "../../common/Button";
@@ -22,9 +22,9 @@ const ContentBlock = ({
   content,
   section,
   button,
-  t,
   id,
   direction,
+  t = (x) => x
 }: ContentBlockProps) => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
@@ -40,7 +40,7 @@ const ContentBlock = ({
           justify="space-between"
           align="middle"
           id={id}
-          direction={direction}
+          $direction={direction}
         >
           <Col lg={11} md={11} sm={12} xs={24}>
             <SvgIcon src={icon} width="100%" height="100%" />
@@ -109,4 +109,4 @@ const ContentBlock = ({
   );
 };
 
-export default withTranslation()(ContentBlock);
+export default cache(ContentBlock);

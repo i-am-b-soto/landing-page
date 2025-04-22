@@ -1,13 +1,13 @@
-import { withTranslation, TFunction } from "react-i18next";
+import { cache } from "react";
 import { Container, TextWrapper, Content } from "./styles";
 
 interface Props {
   title: string;
   content: string;
-  t: TFunction;
+  t?: (x:any) => any;
 }
 
-const Block = ({ title, content, t }: Props) => {
+const Block = ({ title, content, t = (x) => x }: Props) => {
   return (
     <Container>
       <h6>{t(title)}</h6>
@@ -18,4 +18,4 @@ const Block = ({ title, content, t }: Props) => {
   );
 };
 
-export default withTranslation()(Block);
+export default cache(Block);

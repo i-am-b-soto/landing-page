@@ -1,16 +1,20 @@
 import { BrowserRouter } from "react-router-dom";
-import ReactDOM from "react-dom";
-import { I18nextProvider } from "react-i18next";
+import { createRoot } from 'react-dom/client';
 import 'antd/dist/antd.min.css';
 
 import Router from "./router";
-import i18n from "./translation";
+
+
+
+
+//import i18n from "./translation";
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+//import { initializeApp } from "firebase/app";
+//import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+/*
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -26,14 +30,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
+*/
 
 const App = () => (
   <BrowserRouter>
-    <I18nextProvider i18n={i18n}>
       <Router />
-    </I18nextProvider>
   </BrowserRouter>
 );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = createRoot(document.getElementById('root')!);
+root.render(<App />);

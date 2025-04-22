@@ -6,6 +6,15 @@ import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
 
+/*
+import Contact from "../../components/ContactForm";
+import MiddleBlock from "../../components/MiddleBlock";
+import Container from "../../common/Container";
+import ScrollToTop from "../../common/ScrollToTop";
+import ContentBlock from "../../components/ContentBlock";
+import PricingBlock from "../../components/PricingBlock";
+*/
+
 const Contact = lazy(() => import("../../components/ContactForm"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 const Container = lazy(() => import("../../common/Container"));

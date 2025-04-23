@@ -102,17 +102,7 @@ const Footer = ({ t = (x)=>x }: { t?: (x:any) => any }) => {
               </LogoContainer>
             </NavLink>
             
-            <FooterContainer>
-              <SocialLink
-                href="https://github.com/i-am-b-soto"
-                src="github.svg"
-              />
-              <SocialLink
-                href="https://www.linkedin.com/in/briansoto1/"
-                src="linkedin.svg"
-              />
-              
-            </FooterContainer>
+
           </Row>
         </Container>
       </Extra>

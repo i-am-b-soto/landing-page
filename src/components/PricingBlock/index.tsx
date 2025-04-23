@@ -37,7 +37,7 @@ const PricingBlock = ({
             align="middle"
             $direction={"left"}
           >
-            <Col lg={7}  md={7} xs={8}>
+            <Col lg={7}  xs={24}>
                 <PriceWrapperContainer onClick={() => scrollTo("contact")}>
                     <PriceWrapper
                     onClick={() => scrollTo("contact")}
@@ -52,7 +52,7 @@ const PricingBlock = ({
                     </PriceWrapper>
                 </PriceWrapperContainer>              
             </Col>
-            <Col lg={7} md={7} xs={8}>
+            <Col lg={7}  xs={24}>
                 <PriceWrapperContainer onClick={() => scrollTo("contact")}>
                     <PriceWrapper
                     onClick={() => scrollTo("contact")}
@@ -69,7 +69,7 @@ const PricingBlock = ({
 
                 </PriceWrapperContainer>
             </Col>
-            <Col lg={7} md={7} xs={8}>
+            <Col lg={7} xs={24}>
                 <PriceWrapperContainer onClick={() => scrollTo("contact")}>
                     <PriceWrapper >
                         <TextBox >

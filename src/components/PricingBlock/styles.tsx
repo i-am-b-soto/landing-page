@@ -59,9 +59,15 @@ export const PriceWrapperContainer  = styled("div")`
   border-radius: 15px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 
-    @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1100px) {
     padding: 4rem 2rem 6rem 2rem;
   }
+
+  @media only screen and (max-width: 1100px) {
+    height: 320px;
+    margin-bottom: 50px;
+  }
+
 
   &:hover,
   &:active,
@@ -104,12 +110,10 @@ export const ButtonWrapper = styled("div")`
   justify-content: space-between;
   max-width: 100%;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     max-width: 80%;
-  }
-
-  button:last-child {
-    margin-left: 20px;
+    margin-top: auto;
+    justify-content: center;
   }
 `;
 
@@ -131,6 +135,10 @@ export const Title = styled("div")`
         font-size: 21px;
         line-height: 1.41;
         font-weight: 500 !important;
+
+         @media screen and (max-width: 1024px) {
+            width: 100%;
+         }
 
     }
 

@@ -6,6 +6,15 @@ export const ContactContainer = styled("div")`
   @media only screen and (max-width: 1024px) {
     padding: 3rem 0;
   }
+
+  @media only screen and (max-width: 1100px) {
+    h6 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const FormGroup = styled("form")`

@@ -102,7 +102,10 @@ const Footer = ({ t = (x)=>x }: { t?: (x:any) => any }) => {
               </LogoContainer>
             </NavLink>
             
+            <FooterContainer>
 
+              
+            </FooterContainer>
           </Row>
         </Container>
       </Extra>

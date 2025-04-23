@@ -12,6 +12,20 @@ export const ContentSection = styled("section")`
 
 export const Content = styled("p")`
   margin: 1.5rem 0 2rem 0;
+
+   
+    @media only screen and (max-width: 1100px) {
+      font-size: 18px;
+    }
+  
+`;
+
+export const MainTitle = styled("h6")`
+
+    @media only screen and (max-width: 1100px) {
+      font-size: 35px;
+    }
+  
 `;
 
 export const CenterButton = styled("div")`
@@ -33,6 +47,8 @@ export const ContentWrapper = styled("div")`
   @media only screen and (max-width: 575px) {
     padding-top: 4rem;
   }
+
+
 `;
 
 export const ServiceWrapper = styled("div")`
@@ -48,6 +64,7 @@ export const MinTitle = styled("h6")`
   text-transform: uppercase;
   color: #000;
   font-family: "Motiva Sans Light", sans-serif;
+
 `;
 
 export const MinPara = styled("p")`
@@ -56,7 +73,7 @@ export const MinPara = styled("p")`
 
 export const ButtonWrapper = styled("div")`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
 
   @media screen and (min-width: 1024px) {

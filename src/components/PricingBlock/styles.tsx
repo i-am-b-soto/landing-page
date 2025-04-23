@@ -128,6 +128,10 @@ export const Title = styled("div")`
         margin-top: 0;
         margin-bottom: 0;
         font-size: 45px;
+
+         @media screen and (max-width: 1100px) {
+            font-size: 35px;
+         }
     }
     
     p {
@@ -139,6 +143,10 @@ export const Title = styled("div")`
          @media screen and (max-width: 1024px) {
             width: 100%;
          }
+
+         @media screen and (max-width: 1100px) {
+            font-size: 18px;
+         }         
 
     }
 

@@ -14,7 +14,8 @@ import {
   MinPara,
   StyledRow,
   ButtonWrapper,
-  CenterButton
+  CenterButton,
+  MainTitle,
 } from "./styles";
 
 const ContentBlock = ({
@@ -75,7 +76,7 @@ const ContentBlock = ({
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
-              <h6>{t(title)}</h6>
+              <MainTitle> {t(title)}</MainTitle>
               <Content>{t(content)}</Content>
               {direction === "right" ? (
                 <ButtonWrapper>
@@ -115,7 +116,7 @@ const ContentBlock = ({
                           id: number
                         ) => {
                           return (
-                            <Col key={id} span={11}>
+                            <Col key={id} lg={11} xs={22}>
                               <SvgIcon
                                 src={item.icon}
                                 width="60px"

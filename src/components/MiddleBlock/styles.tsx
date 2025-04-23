@@ -14,6 +14,10 @@ export const MiddleBlockSection = styled("section")`
 
 export const Content = styled("p")`
   padding: 0.75rem 0 0.75rem;
+
+  @media only screen and (max-width: 1100px) {
+    font-size: 18px;
+  }
 `;
 
 export const ContentWrapper = styled("div")`
@@ -22,4 +26,10 @@ export const ContentWrapper = styled("div")`
   @media only screen and (max-width: 768px) {
     max-width: 100%;
   }
+
+  h6 {
+    @media only screen and (max-width: 1100px) {
+      font-size: 35px;
+    }
+
 `;

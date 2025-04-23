@@ -1,4 +1,4 @@
-import { useState, cache } from "react";
+import { useState, cache, useEffect } from "react";
 import { Row, Col, Drawer } from "antd";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
@@ -15,12 +15,24 @@ import {
   Span,
 } from "./styles";
 
+
+
+
 const Header = ({ t = (x) => x }: { t?: (x: any) => any }) => {
   const [visible, setVisibility] = useState(false);
-
+  const [size, setSize] = useState({ width: window.innerWidth });
+  
   const toggleButton = () => {
     setVisibility(!visible);
   };
+
+
+  useEffect(() => {
+    const handleResize = () => setSize({ width: window.innerWidth });
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
 
   const MenuItem = () => {
     const scrollTo = (id: string) => {
@@ -58,7 +70,7 @@ const Header = ({ t = (x) => x }: { t?: (x: any) => any }) => {
       <Container>
         <Row justify="space-between">
           <LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" width="450px" height="68px" />
+            <SvgIcon src="logo.svg" width={size.width > 1100 ? "450px" : "300px"} height="68px" />
           </LogoContainer>
           <NotHidden>
             <MenuItem />

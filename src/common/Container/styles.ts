@@ -25,5 +25,6 @@ export const StyledContainer = styled("div")<{
   @media only screen and (max-width: 414px) {
     width: 100%;
     padding: 0 18px;
+    
   }
 `;

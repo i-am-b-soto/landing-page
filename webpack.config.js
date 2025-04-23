@@ -1,7 +1,8 @@
+require('dotenv').config()
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-require('dotenv').config();
+
 
 
 
@@ -51,7 +52,8 @@ module.exports = {
       template: "./public/index.html",
     }),
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env),
+      'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
+      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN)
     }),
   ],
 };

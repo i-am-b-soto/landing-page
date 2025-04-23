@@ -1,4 +1,4 @@
-require('dotenv').config()
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: "./src/index",
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     clean: true,
   },
@@ -51,9 +51,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new webpack.DefinePlugin({
-      'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
-      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN)
-    }),
+    new Dotenv({
+      path: './.env', // Path to the .env file
+      safe: true // load .env.example (optional)
+    })
   ],
 };

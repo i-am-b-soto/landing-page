@@ -1,8 +1,7 @@
-const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 
@@ -43,7 +42,15 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: ["file-loader", "svg-url-loader"],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: '[path][name].[ext]',
+              publicPath: '/',
+            },
+          },
+        ],
       },
     ],
   },
@@ -51,9 +58,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new Dotenv({
-      path: './.env', // Path to the .env file
-      safe: true // load .env.example (optional)
-    })
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public', 
+          to: '.',  
+          globOptions: {
+            ignore: ['**/index.html'], // Exclude the index.html file from being copied
+          },        
+        },
+      ],
+    }),
   ],
 };

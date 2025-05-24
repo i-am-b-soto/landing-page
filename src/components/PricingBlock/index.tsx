@@ -58,8 +58,8 @@ const PricingBlock = ({
                     onClick={() => scrollTo("contact")}
                     >
                         <TextBox>
-                            <Title><h6>{"$85/Hr"}</h6>  <p><b>{"Ad Hoc Hours"}</b></p> </Title>
-                            <Content>{"Not sure how many hours you need on your project? You can start here!"}</Content>
+                            <Title><h6>{"2000"}</h6>  <p><b>{"One time scraping"}</b></p> </Title>
+                            <Content>{"Including basic schema design and labeling"}</Content>
                        
                         <ButtonWrapper>
                             <Button onClick={() => scrollTo("contact")}>{"Book Now!"} </Button>

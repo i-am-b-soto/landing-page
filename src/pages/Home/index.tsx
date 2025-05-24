@@ -40,7 +40,6 @@ const Home = () => {
         icon="support-solid-I.svg"
         id="services"
       />      
-      <PricingBlock title=""></PricingBlock>
 
       <ContentBlock
         direction="right"

@@ -1,32 +1,32 @@
 {
   "title": "Services Offered",
-  "text": "Brian Soto Consulting specializes in Big Data Migration. Automated ETL pipelines. Datawarehouse management and creation. And high tech administrative Web Apps and custom report tools.",
+  "text": "Get Machine Learning-Ready Datasets — From Any Website, at Scale.",
   "button": [
     {
-      "title": "See Our Prices!",
-      "scrollTo": "prices"
+      "title": "Get a Quote Today!",
+      "scrollTo": "contact"
     }
   ],  
   "section": [
     {
-      "title": "Big Data migration and ETL",
-      "content": "Need data automated somewhere? Or a refactored database schema? A new Data warehouse?",
-      "icon": "process-outline.svg"
+      "title": "Data Scraping",
+      "content": "From static or Dynamic sites. Including custom data schemas!",
+      "icon": "search-outline.svg"
     },
     {
-      "title": "Data Analytics Reports",
-      "content": "Need reports on your Big Data?",
+      "title": "Custom Data Pipelines",
+      "content": "Ongoing/Recurring scrapes and Custom Data Pipelines. Including custom data packaging!",
       "icon": "graphs.svg"
     },
     {
-      "title": "Web Applications",
-      "content": "Develop high-tech web applications for your unique company needs",
-      "icon": "eCommerce-solid.svg"
+      "title": "Automated Labeling, Segmenting, and Tokenization!",
+      "content": "For select datasets!",
+      "icon": "process-outline.svg"
     },
     {
-      "title": "And more!",
+      "title": "Flexible pricing models!",
       "content": "Have a question about something not listed here? Let's chat!",
-      "icon": "search-outline.svg"
+      "icon": "eCommerce-solid.svg" 
     }
   ]
 }

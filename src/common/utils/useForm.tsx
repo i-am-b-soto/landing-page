@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { notification } from "antd";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db } from '../../firebase'
+
 
 interface IValues {
   name: string;
@@ -28,19 +31,21 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
     const errors = validate(values);
     setFormState((prevState) => ({ ...prevState, errors }));
 
-    const url = ""; // Fill in your API URL here
 
     try {
+      let success = false;
       if (Object.values(errors).every((error) => error === "")) {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
-
-        if (!response.ok) {
+       
+        try {
+            await addDoc(collection(db, "contacts"), {
+              ...values,
+              created: Timestamp.now(),
+            });
+            success = true;
+          } catch (error) {
+            console.error("Error sending message: ", error);
+          }
+        if (!success) {
           notification["error"]({
             message: "Error",
             description:

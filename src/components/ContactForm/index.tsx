@@ -8,10 +8,11 @@ import { Button } from "../../common/Button";
 import Block from "../Block";
 import Input from "../../common/Input";
 import TextArea from "../../common/TextArea";
-import { ContactContainer, FormGroup, Span, ButtonContainer } from "./styles";
+import { ContactContainer, FormGroup, Span, ButtonContainer, NotificationSpan, NotificationContainer } from "./styles";
+
 
 const Contact = ({ title, content, id, t = (x)=>x }: ContactProps) => {
-  const { values, errors, handleChange, handleSubmit } = useForm(validate);
+  const { values, errors, handleChange, handleSubmit, notification } = useForm(validate);
 
   const ValidationType = ({ type }: ValidationTypeProps) => {
     const ErrorMessage = errors[type as keyof typeof errors];
@@ -58,12 +59,20 @@ const Contact = ({ title, content, id, t = (x)=>x }: ContactProps) => {
                 />
                 <ValidationType type="message" />
               </Col>
+
               <ButtonContainer>
                 <Button name="submit">{t("Submit")}</Button>
               </ButtonContainer>
             </FormGroup>
           </Slide>
         </Col>
+        {notification !== "" && (
+            <NotificationContainer>
+              <NotificationSpan>
+                {notification}
+              </NotificationSpan>
+            </NotificationContainer>
+          )}        
       </Row>
     </ContactContainer>
   );

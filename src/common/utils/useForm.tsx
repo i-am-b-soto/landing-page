@@ -25,6 +25,8 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
     errors: { ...initialValues },
   });
 
+  const [notification, setNotification] = useState("");
+
   const handleSubmit = async (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     const values = formState.values;
@@ -46,29 +48,20 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
             console.error("Error sending message: ", error);
           }
         if (!success) {
-          notification["error"]({
-            message: "Error",
-            description:
-              "There was an error sending your message, please try again later.",
-          });
+          console.log("Error submiting to firebase")
+          setNotification("There was an error sending your message, please try again later.")
         } else {
           event.target.reset();
           setFormState(() => ({
             values: { ...initialValues },
             errors: { ...initialValues },
           }));
-
-          notification["success"]({
-            message: "Success",
-            description: "Your message has been sent!",
-          });
+         
+          setNotification("Message Successfully Submitted!!!")
         }
       }
     } catch (error) {
-      notification["error"]({
-        message: "Error",
-        description: "Failed to submit form. Please try again later.",
-      });
+      setNotification("There was an error sending your message, please try again later.")
     }
   };
 
@@ -95,5 +88,6 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
     handleSubmit,
     values: formState.values,
     errors: formState.errors,
+    notification,
   };
 };

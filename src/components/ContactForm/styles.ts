@@ -43,3 +43,24 @@ export const ButtonContainer = styled("div")`
     padding-top: 0.75rem;
   }
 `;
+
+export const NotificationContainer = styled("div")`
+  display: flex;
+  flex-direction:row; 
+  justify-content: center;
+  width: 100%;
+`;
+
+export const NotificationSpan = styled("span")`
+  background-color: rgb(255, 130, 92);
+  display: inline-block;
+  padding: 0.4em 0.75em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-right: 0.5em;
+  white-space: nowrap;
+  transition: all 0.3s ease;  
+`;
